@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ratan Tata — A Legacy Beyond Measure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0A0A0A;
+  --charcoal: #1A1A1A;
+  --gold: #D4AF37;
+  --gold-light: #F0D060;
+  --gold-dark: #A8892A;
+  --silver: #C0C0C0;
+  --white: #FFFFFF;
+  --text-muted: rgba(255,255,255,0.55);
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(212,175,55,0.15);
+  --gold-glow: rgba(212,175,55,0.2);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+/* Custom cursor */
+.cursor{
+  width:10px;height:10px;
+  border-radius:50%;background:var(--gold);
+  position:fixed;pointer-events:none;z-index:99999;
+  transition:transform 0.1s ease;
+  transform:translate(-50%,-50%);
+}
+.cursor-ring{
+  width:36px;height:36px;
+  border-radius:50%;border:1px solid rgba(212,175,55,0.5);
+  position:fixed;pointer-events:none;z-index:99998;
+  transition:all 0.12s ease;
+  transform:translate(-50%,-50%);
+}
+
+#scroll-progress{
+  position:fixed;top:0;left:0;height:2px;z-index:9999;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));
+  width:0%;transition:width 0.1s linear;
+  box-shadow:0 0 10px var(--gold);
+}
+
+#loader{
+  position:fixed;inset:0;z-index:99990;
+  background:var(--black);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+#loader.out{opacity:0;visibility:hidden;}
+.loader-monogram{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(80px,15vw,140px);
+  font-weight:900;
+  line-height:1;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:monogramPulse 2s ease-in-out infinite;
+  letter-spacing:-4px;
+}
+@keyframes monogramPulse{
+  0%,100%{filter:drop-shadow(0 0 20px rgba(212,175,55,0.3));}
+  50%{filter:drop-shadow(0 0 50px rgba(212,175,55,0.7));}
+}
+.loader-line{
+  width:120px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:24px 0;
+  animation:lineExpand 2s ease-in-out infinite;
+}
+@keyframes lineExpand{
+  0%,100%{width:80px;opacity:0.5;}
+  50%{width:180px;opacity:1;}
+}
+.loader-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;letter-spacing:6px;
+  color:rgba(212,175,55,0.7);
+  font-style:italic;
+}
+.loader-bar{
+  width:200px;height:1px;
+  background:rgba(255,255,255,0.08);
+  margin-top:40px;overflow:hidden;
+}
+.loader-fill{
+  height:100%;width:0;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));
+  animation:loaderFill 2.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+@keyframes loaderFill{to{width:100%;}}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:20px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(to bottom,rgba(10,10,10,0.95),transparent);
+  transition:background 0.4s;
+}
+nav.scrolled{
+  background:rgba(10,10,10,0.97);
+  border-bottom:1px solid rgba(212,175,55,0.1);
+  padding:14px 60px;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--gold);
+  letter-spacing:2px;
+}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{
+  font-size:12px;letter-spacing:2px;font-weight:500;
+  color:rgba(255,255,255,0.6);text-decoration:none;
+  transition:color 0.3s;text-transform:uppercase;
+}
+.nav-links a:hover{color:var(--gold);}
+
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(212,175,55,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(212,175,55,0.04) 0%, transparent 50%),
+    var(--black);
+}
+/* Grain overlay */
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.4;pointer-events:none;
+}
+.hero-portrait{
+  position:absolute;right:0;top:0;bottom:0;
+  width:55%;
+  background:linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 100%);
+  clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%);
+  overflow:hidden;
+}
+.hero-portrait-img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  opacity:0.85;
+  filter:grayscale(20%) contrast(1.05);
+}
+.hero-portrait-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,var(--black) 0%,transparent 40%,transparent 70%,rgba(10,10,10,0.3) 100%);
+}
+/* Placeholder portrait (no image) */
+.portrait-placeholder{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,#111 0%,#222 50%,#181818 100%);
+  font-family:'Playfair Display',serif;
+  font-size:180px;font-weight:900;
+  color:rgba(212,175,55,0.08);
+  user-select:none;
+  letter-spacing:-10px;
+}
+.hero-content{
+  position:relative;z-index:10;
+  max-width:1200px;width:100%;
+  padding:0 60px;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  min-height:100vh;
+}
+.hero-left{padding-right:40px;}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:5px;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:24px;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;animation:fadeUp 1s 2.5s ease forwards;
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:40px;height:1px;
+  background:var(--gold);
+}
+.hero-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,7vw,96px);
+  font-weight:900;line-height:0.95;
+  margin-bottom:8px;
+  opacity:0;animation:fadeUp 1s 2.7s ease forwards;
+}
+.hero-name-gold{
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  display:block;
+}
+.hero-dates{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-style:italic;
+  color:var(--silver);letter-spacing:3px;
+  margin-bottom:28px;
+  opacity:0;animation:fadeUp 1s 2.9s ease forwards;
+}
+.hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(16px,2.2vw,22px);
+  font-style:italic;font-weight:300;
+  color:rgba(255,255,255,0.8);
+  line-height:1.6;
+  margin-bottom:40px;
+  border-left:2px solid var(--gold);
+  padding-left:20px;
+  opacity:0;animation:fadeUp 1s 3.1s ease forwards;
+}
+.hero-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;font-style:italic;
+  color:rgba(212,175,55,0.7);
+  line-height:1.8;
+  opacity:0;animation:fadeUp 1s 3.3s ease forwards;
+}
+.hero-quote::before{content:'" ';}
+.hero-quote::after{content:' "';}
+.hero-scroll{
+  position:absolute;bottom:40px;left:60px;
+  display:flex;align-items:center;gap:12px;
+  font-size:11px;letter-spacing:3px;
+  color:rgba(255,255,255,0.4);
+  opacity:0;animation:fadeUp 1s 3.5s ease forwards;
+}
+.scroll-line{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{
+  0%,100%{width:40px;}50%{width:70px;}
+}
+
+section{padding:120px 60px;}
+.section-max{max-width:1200px;margin:0 auto;}
+.section-eyebrow{
+  font-size:11px;letter-spacing:5px;
+  color:var(--gold);text-transform:uppercase;
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:20px;
+}
+.section-eyebrow::before{
+  content:'';display:block;width:30px;height:1px;background:var(--gold);
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:700;line-height:1.1;
+  margin-bottom:20px;
+}
+.gold-text{
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.section-rule{
+  width:60px;height:1px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  margin:20px 0 40px;
+}
+.body-text{
+  font-size:15px;line-height:1.9;
+  color:rgba(255,255,255,0.7);
+  font-weight:300;
+}
+
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;
+  align-items:center;
+}
+.about-visual{
+  position:relative;
+}
+.about-frame{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(145deg,var(--charcoal),#111);
+  border-radius:4px;
+  position:relative;overflow:hidden;
+  border:1px solid rgba(212,175,55,0.15);
+}
+.about-frame-inner{
+  position:absolute;inset:12px;
+  background:linear-gradient(145deg,#1c1c1c,#0f0f0f);
+  border-radius:2px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:100px;font-weight:900;
+  color:rgba(212,175,55,0.06);
+}
+.about-frame::after{
+  content:'';position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(212,175,55,0.05) 0%,transparent 60%);
+}
+.about-corner{
+  position:absolute;width:20px;height:20px;
+  border-color:var(--gold);border-style:solid;
+}
+.about-corner.tl{top:-1px;left:-1px;border-width:2px 0 0 2px;}
+.about-corner.tr{top:-1px;right:-1px;border-width:2px 2px 0 0;}
+.about-corner.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px;}
+.about-corner.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0;}
+.about-badge{
+  position:absolute;bottom:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  box-shadow:0 10px 40px rgba(212,175,55,0.3);
+}
+.about-badge-num{font-size:28px;font-weight:900;color:var(--black);line-height:1;}
+.about-badge-label{font-size:9px;color:rgba(0,0,0,0.7);letter-spacing:1px;font-weight:600;}
+.about-cards{display:flex;flex-direction:column;gap:20px;margin-top:40px;}
+.about-card{
+  padding:24px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:4px;
+  position:relative;overflow:hidden;
+}
+.about-card::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--gold-dark),var(--gold));
+}
+.about-card-label{
+  font-size:10px;letter-spacing:3px;
+  color:var(--gold);margin-bottom:8px;text-transform:uppercase;
+}
+.about-card-text{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;font-weight:300;}
+
+.timeline-section{background:var(--charcoal);}
+.timeline{position:relative;margin-top:60px;}
+.timeline::before{
+  content:'';position:absolute;
+  left:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold),var(--gold),transparent);
+  transform:translateX(-50%);
+}
+.timeline-item{
+  display:grid;grid-template-columns:1fr 60px 1fr;
+  gap:0;margin-bottom:60px;
+  align-items:start;
+}
+.timeline-content{padding:0 40px;}
+.timeline-content.right{text-align:right;}
+.timeline-dot{
+  width:16px;height:16px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 20px rgba(212,175,55,0.5);
+  margin:0 auto;margin-top:8px;
+  position:relative;z-index:1;
+  flex-shrink:0;
+}
+.timeline-dot::before{
+  content:'';position:absolute;inset:-4px;
+  border-radius:50%;border:1px solid rgba(212,175,55,0.3);
+}
+.timeline-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,175,55,0.12);
+  padding:28px;border-radius:4px;
+  transition:all 0.4s ease;
+  opacity:0;transform:translateX(-40px);
+}
+.timeline-item:nth-child(even) .timeline-card{transform:translateX(40px);}
+.timeline-card.visible{opacity:1;transform:translateX(0);}
+.timeline-card:hover{
+  background:rgba(212,175,55,0.05);
+  border-color:rgba(212,175,55,0.3);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 30px rgba(212,175,55,0.08);
+  transform:translateY(-4px)!important;
+}
+.timeline-year{
+  font-family:'Playfair Display',serif;
+  font-size:32px;font-weight:700;
+  color:var(--gold);opacity:0.5;
+  margin-bottom:8px;
+}
+.timeline-event{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:600;
+  margin-bottom:10px;
+}
+.timeline-desc{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300;}
+
+.achievements-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;margin-top:60px;
+}
+.achievement-card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(212,175,55,0.1);
+  padding:36px;border-radius:4px;
+  position:relative;overflow:hidden;
+  transition:all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  opacity:0;transform:translateY(30px);
+}
+.achievement-card.visible{opacity:1;transform:translateY(0);}
+.achievement-card::before{
+  content:'';position:absolute;
+  inset:0;opacity:0;
+  background:linear-gradient(135deg,rgba(212,175,55,0.06),transparent);
+  transition:opacity 0.4s;
+}
+.achievement-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(212,175,55,0.35);
+  box-shadow:0 30px 80px rgba(0,0,0,0.5),0 0 40px rgba(212,175,55,0.1);
+}
+.achievement-card:hover::before{opacity:1;}
+.achievement-icon{
+  font-size:36px;margin-bottom:20px;
+  display:block;
+}
+.achievement-label{
+  font-size:10px;letter-spacing:3px;
+  color:var(--gold);margin-bottom:10px;text-transform:uppercase;
+}
+.achievement-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  margin-bottom:14px;
+}
+.achievement-text{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300;}
+
+.counters-section{
+  padding:80px 60px;
+  background:linear-gradient(135deg,var(--charcoal),#0f0f0f);
+  border-top:1px solid rgba(212,175,55,0.08);
+  border-bottom:1px solid rgba(212,175,55,0.08);
+}
+.counters-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:40px;max-width:1200px;margin:0 auto;
+}
+.counter-item{text-align:center;}
+.counter-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,6vw,72px);font-weight:900;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1;
+}
+.counter-suffix{font-size:0.6em;}
+.counter-label{
+  font-size:11px;letter-spacing:3px;
+  color:rgba(255,255,255,0.4);margin-top:10px;text-transform:uppercase;
+}
+.counter-rule{
+  width:30px;height:1px;
+  background:var(--gold);
+  margin:12px auto;opacity:0.4;
+}
+
+.philan-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin-top:60px;
+}
+.philan-card{
+  padding:36px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:4px;
+  position:relative;overflow:hidden;
+  transition:all 0.4s ease;
+  opacity:0;transform:translateY(20px);
+}
+.philan-card.visible{opacity:1;transform:translateY(0);}
+.philan-card:hover{
+  border-color:rgba(212,175,55,0.3);
+  background:rgba(212,175,55,0.04);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.philan-icon{font-size:32px;margin-bottom:18px;}
+.philan-title{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:600;margin-bottom:12px;
+}
+.philan-text{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;font-weight:300;}
+
+.quotes-section{
+  background:var(--charcoal);
+  padding:120px 60px;
+}
+.quotes-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:24px;margin-top:60px;
+}
+.quote-card{
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(212,175,55,0.12);
+  border-radius:4px;
+  padding:36px;
+  position:relative;overflow:hidden;
+  transition:all 0.4s ease;
+  opacity:0;transform:translateY(30px);
+}
+.quote-card.visible{opacity:1;transform:translateY(0);}
+.quote-card::before{
+  content:'"';
+  font-family:'Cormorant Garamond',serif;
+  font-size:120px;font-style:italic;font-weight:300;
+  color:rgba(212,175,55,0.08);
+  position:absolute;top:-10px;left:20px;
+  line-height:1;
+}
+.quote-card:hover{
+  border-color:rgba(212,175,55,0.3);
+  background:rgba(212,175,55,0.04);
+  transform:translateY(-6px);
+  box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 30px rgba(212,175,55,0.08);
+}
+.quote-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(17px,2vw,21px);
+  font-style:italic;font-weight:400;
+  line-height:1.7;color:rgba(255,255,255,0.85);
+  position:relative;z-index:1;
+  margin-bottom:20px;
+}
+.quote-attr{
+  font-size:11px;letter-spacing:3px;
+  color:var(--gold);text-transform:uppercase;
+  opacity:0.7;
+}
+
+.legacy-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;
+  margin-top:60px;
+}
+.legacy-card{
+  text-align:center;padding:40px 28px;
+  border:1px solid rgba(212,175,55,0.1);
+  border-radius:4px;
+  background:var(--glass);
+  transition:all 0.4s ease;
+  opacity:0;transform:translateY(20px);
+}
+.legacy-card.visible{opacity:1;transform:translateY(0);}
+.legacy-card:hover{
+  border-color:rgba(212,175,55,0.3);
+  background:rgba(212,175,55,0.04);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 30px rgba(212,175,55,0.06);
+}
+.legacy-icon{font-size:40px;margin-bottom:20px;}
+.legacy-title{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:600;
+  margin-bottom:14px;color:var(--gold);
+}
+.legacy-text{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;font-weight:300;}
+
+.gallery-section{background:var(--charcoal);}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:220px;
+  gap:12px;margin-top:60px;
+}
+.gallery-item{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#1c1c1c,#111);
+  cursor:pointer;
+  border:1px solid rgba(212,175,55,0.1);
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.gallery-item.visible{opacity:1;transform:translateY(0);}
+.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+.gallery-item:nth-child(5){grid-column:span 2;}
+.gallery-item-inner{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:14px;font-style:italic;
+  color:rgba(212,175,55,0.2);
+  transition:all 0.4s ease;
+  flex-direction:column;gap:10px;
+}
+.gallery-item:hover .gallery-item-inner{
+  color:rgba(212,175,55,0.4);
+}
+.gallery-item-label{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:20px;
+  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+  font-size:13px;color:rgba(255,255,255,0.8);
+  transform:translateY(100%);
+  transition:transform 0.3s ease;
+  font-style:italic;font-family:'Cormorant Garamond',serif;
+}
+.gallery-item:hover .gallery-item-label{transform:translateY(0);}
+.gallery-item::after{
+  content:'';position:absolute;inset:0;
+  border:0px solid var(--gold);
+  transition:border-width 0.3s ease;
+  pointer-events:none;
+}
+.gallery-item:hover::after{border-width:1px;}
+
+#lightbox{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,0.95);
+  display:none;align-items:center;justify-content:center;
+  backdrop-filter:blur(10px);
+}
+#lightbox.active{display:flex;}
+.lightbox-inner{
+  max-width:800px;width:90%;
+  position:relative;text-align:center;
+}
+.lightbox-close{
+  position:absolute;top:-50px;right:0;
+  font-size:24px;color:var(--gold);cursor:pointer;
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(212,175,55,0.3);
+  border-radius:50%;transition:all 0.3s;
+}
+.lightbox-close:hover{background:rgba(212,175,55,0.1);}
+.lightbox-content{
+  background:linear-gradient(145deg,#1c1c1c,#111);
+  border:1px solid rgba(212,175,55,0.2);
+  border-radius:4px;
+  padding:60px;
+  font-family:'Playfair Display',serif;
+  font-size:32px;font-style:italic;
+  color:rgba(212,175,55,0.2);
+}
+.lightbox-caption{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-style:italic;
+  color:rgba(255,255,255,0.6);
+  margin-top:16px;
+}
+
+footer{
+  background:var(--black);
+  border-top:1px solid rgba(212,175,55,0.1);
+  padding:80px 60px 40px;
+  text-align:center;
+}
+.footer-monogram{
+  font-family:'Playfair Display',serif;
+  font-size:72px;font-weight:900;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:8px;
+  display:block;
+}
+.footer-name{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:700;
+  color:var(--white);margin-bottom:6px;
+}
+.footer-dates{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:15px;
+  color:var(--silver);letter-spacing:3px;margin-bottom:32px;
+}
+.footer-tribute{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:17px;
+  color:rgba(255,255,255,0.5);
+  line-height:1.8;max-width:600px;margin:0 auto 40px;
+}
+.footer-line{
+  width:100px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:32px auto;
+}
+.footer-credit{
+  font-size:12px;letter-spacing:2px;
+  color:rgba(255,255,255,0.3);text-transform:uppercase;
+}
+.footer-credit span{color:var(--gold);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.22,1,0.36,1);}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  nav{padding:16px 24px;}
+  nav.scrolled{padding:12px 24px;}
+  .nav-links{gap:20px;}
+  .nav-links a{font-size:11px;}
+  section{padding:80px 24px;}
+  .hero-content{grid-template-columns:1fr;padding:0 24px;}
+  .hero-portrait{clip-path:none;width:100%;opacity:0.15;}
+  .hero-scroll{left:24px;}
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .about-visual{display:none;}
+  .timeline::before{left:20px;}
+  .timeline-item{grid-template-columns:0 40px 1fr;gap:0;}
+  .timeline-content.right{display:none;}
+  .timeline-content{padding:0 0 0 20px;}
+  .counters-grid{grid-template-columns:repeat(2,1fr);}
+  .philan-grid{grid-template-columns:1fr;}
+  .legacy-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:160px;}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+  .gallery-item:nth-child(5){grid-column:span 1;}
+  .counters-section,.quotes-section,.gallery-section{padding:80px 24px;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hero-name{font-size:48px;}
+  .legacy-grid{grid-template-columns:1fr;}
+  .counters-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:200px;}
+  .gallery-item:nth-child(1){grid-column:span 1;grid-row:span 1;}
+  .gallery-item:nth-child(5){grid-column:span 1;}
+}
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-monogram">RT</div>
+  <div class="loader-line"></div>
+  <div class="loader-sub">A Legacy Beyond Measure</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">RT</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#timeline">Journey</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#philanthropy">Philanthropy</a>
+    <a href="#quotes">Quotes</a>
+    <a href="#legacy">Legacy</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-portrait">
+    
+    <img
+      src="ratan-tata.jpg"
+      alt="Ratan Tata"
+      class="hero-portrait-img"
+      onerror="this.style.display='none';document.getElementById('heroPlaceholder').style.display='flex';"
+    >
+    <div class="portrait-placeholder" id="heroPlaceholder" style="display:none">RT</div>
+    <div class="hero-portrait-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-eyebrow">1937 — 2024</div>
+      <div class="hero-name">
+        <span>Ratan</span>
+        <span class="hero-name-gold">Tata</span>
+      </div>
+      <div class="hero-dates">28 December 1937 · 9 October 2024</div>
+      <div class="hero-tagline">A Visionary Leader, Philanthropist,<br>and Nation Builder</div>
+      <div class="hero-quote">I don't believe in taking right decisions. I take decisions and then make them right.</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    SCROLL TO EXPLORE
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-max">
+    <div class="about-grid">
+      <div class="about-visual" data-parallax="0.15">
+        <div class="about-frame">
+          
+          <img
+            src="ratan-tata-about.jpg"
+            alt="Ratan Tata"
+            style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"
+            onerror="this.style.display='none';document.getElementById('aboutPlaceholder').style.display='flex';"
+          >
+          <div class="about-frame-inner" id="aboutPlaceholder" style="display:none">RT</div>
+          <div class="about-corner tl"></div>
+          <div class="about-corner tr"></div>
+          <div class="about-corner bl"></div>
+          <div class="about-corner br"></div>
+        </div>
+        <div class="about-badge">
+          <div class="about-badge-num">86</div>
+          <div class="about-badge-label">YEARS</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow">The Man</div>
+        <div class="section-title">Early Life &amp;<br><span class="gold-text">Foundations</span></div>
+        <div class="section-rule"></div>
+        <p class="body-text" style="margin-bottom:32px;">Born on 28 December 1937 in Surat, Gujarat, Ratan Naval Tata was raised in a family with an extraordinary legacy. Adopted by his grandfather Navajbai Tata after his parents separated, he grew up with a deep sense of duty, humility, and responsibility — values that would define the entire course of his life.</p>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-label">Education</div>
+            <div class="about-card-text">Ratan Tata pursued Architecture at Cornell University, USA, and later attended the Advanced Management Program at Harvard Business School — giving him a rare combination of design thinking and global business acumen.</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-label">Entry into Tata Group</div>
+            <div class="about-card-text">He joined the Tata Group in 1961, working on the shop floor of Tata Steel in Jamshedpur. This ground-level experience shaped his leadership — he always led with empathy and understood the dignity of every worker.</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-label">Rise to Chairmanship</div>
+            <div class="about-card-text">Appointed Chairman of Tata Sons in 1991, he inherited a conglomerate in need of transformation. Over two decades, he would grow it into a global powerhouse respected across continents.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section" id="timeline">
+  <div class="section-max">
+    <div class="section-eyebrow">The Journey</div>
+    <div class="section-title">A Life of<br><span class="gold-text">Remarkable Milestones</span></div>
+    <div class="section-rule"></div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-content right">
+          <div class="timeline-card">
+            <div class="timeline-year">1961</div>
+            <div class="timeline-event">Joined Tata Group</div>
+            <div class="timeline-desc">Started his career on the shop floor at Tata Steel, Jamshedpur — refusing any privileges of his lineage.</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot"></div></div>
+        <div class="timeline-content"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content"></div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="timeline-year">1991</div>
+            <div class="timeline-event">Became Chairman of Tata Sons</div>
+            <div class="timeline-desc">Succeeded J.R.D. Tata as Chairman, beginning a transformational era for the Tata Group — restructuring, modernising, and globalising the empire.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content right">
+          <div class="timeline-card">
+            <div class="timeline-year">2000</div>
+            <div class="timeline-event">Tetley Acquisition</div>
+            <div class="timeline-desc">Tata Tea's £271 million acquisition of Tetley marked the first major international acquisition by an Indian company, signalling a bold new era.</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot"></div></div>
+        <div class="timeline-content"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content"></div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="timeline-year">2004</div>
+            <div class="timeline-event">Tata Motors Goes Global</div>
+            <div class="timeline-desc">Tata Motors listed on the New York Stock Exchange, becoming only the second Indian company to achieve this feat, cementing its global ambitions.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content right">
+          <div class="timeline-card">
+            <div class="timeline-year">2008</div>
+            <div class="timeline-event">Jaguar Land Rover &amp; Tata Nano</div>
+            <div class="timeline-desc">Acquired Jaguar Land Rover from Ford for $2.3 billion — one of India's most audacious deals. The same year, unveiled the Tata Nano, the world's most affordable car.</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot"></div></div>
+        <div class="timeline-content"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content"></div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot"></div></div>
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="timeline-year">2012</div>
+            <div class="timeline-event">Retirement &amp; Continuing Legacy</div>
+            <div class="timeline-desc">Retired as Chairman of Tata Sons, leaving behind a $100+ billion conglomerate. Continued his legacy through philanthropy, mentorship, and angel investing in Indian startups.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content right">
+          <div class="timeline-card">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-event">A Nation Mourns</div>
+            <div class="timeline-desc">Ratan Tata passed away on 9 October 2024 in Mumbai. India declared a day of national mourning. His legacy — built on integrity, compassion, and excellence — endures forever.</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;"><div class="timeline-dot" style="background:linear-gradient(135deg,var(--gold),var(--silver));box-shadow:0 0 30px rgba(212,175,55,0.6);"></div></div>
+        <div class="timeline-content"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="counters-section">
+  <div class="counters-grid">
+    <div class="counter-item">
+      <div class="counter-num" data-target="100" data-suffix="+">0</div>
+      <div class="counter-rule"></div>
+      <div class="counter-label">Billion USD Revenue</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="30" data-suffix="+">0</div>
+      <div class="counter-rule"></div>
+      <div class="counter-label">Countries of Operation</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="935" data-suffix="K+">0</div>
+      <div class="counter-rule"></div>
+      <div class="counter-label">Employees Worldwide</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="50" data-suffix="+">0</div>
+      <div class="counter-rule"></div>
+      <div class="counter-label">Tata Group Companies</div>
+    </div>
+  </div>
+</div>
+
+<section id="achievements">
+  <div class="section-max">
+    <div class="section-eyebrow">Milestones</div>
+    <div class="section-title">Defining<br><span class="gold-text">Achievements</span></div>
+    <div class="section-rule"></div>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <span class="achievement-icon">🚗</span>
+        <div class="achievement-label">Automobile</div>
+        <div class="achievement-title">The Tata Nano</div>
+        <div class="achievement-text">Conceived as the "People's Car," the Nano was Ratan Tata's dream of safe, affordable mobility for every Indian family. Unveiled in 2008, it represented innovation driven by empathy — engineering a ₹1 lakh car had never been attempted before.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="achievement-icon">🏎</span>
+        <div class="achievement-label">Global Acquisition</div>
+        <div class="achievement-title">Jaguar Land Rover</div>
+        <div class="achievement-text">The $2.3 billion acquisition from Ford in 2008 turned sceptics into believers. Under Tata's stewardship, JLR became one of Britain's most successful automotive brands, generating billions in annual revenue and employing thousands across the UK.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="achievement-icon">🍵</span>
+        <div class="achievement-label">FMCG Expansion</div>
+        <div class="achievement-title">Tetley Acquisition</div>
+        <div class="achievement-text">In 2000, Tata Tea's £271 million acquisition of British tea icon Tetley became the first major Indian takeover of a foreign brand, rewriting the rules of Indian global commerce and inspiring a generation of Indian CEOs to think international.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="achievement-icon">🌐</span>
+        <div class="achievement-label">Technology</div>
+        <div class="achievement-title">Global IT Leadership</div>
+        <div class="achievement-text">Under his chairmanship, Tata Consultancy Services (TCS) grew into Asia's most valuable IT company, pioneering India's position as the world's technology outsourcing capital and transforming millions of young Indians' careers.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="achievement-icon">🏅</span>
+        <div class="achievement-label">National Honours</div>
+        <div class="achievement-title">Padma Vibhushan</div>
+        <div class="achievement-text">Awarded India's second-highest civilian honour, the Padma Vibhushan, in 2008, recognizing his extraordinary contribution to trade, industry, and philanthropy. He had earlier received the Padma Bhushan in 2000.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="achievement-icon">✈</span>
+        <div class="achievement-label">Aviation</div>
+        <div class="achievement-title">Bringing Air India Home</div>
+        <div class="achievement-text">In 2022, after decades of waiting, the Tata Group reacquired Air India — the airline J.R.D. Tata had originally founded and that the government had nationalised in 1953. It was a deeply personal homecoming for the Tata legacy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="philanthropy" style="background:var(--charcoal);">
+  <div class="section-max">
+    <div class="section-eyebrow">Giving Back</div>
+    <div class="section-title">A Heart That<br><span class="gold-text">Served Millions</span></div>
+    <div class="section-rule"></div>
+    <p class="body-text fade-up" style="max-width:680px;margin-bottom:0;">Ratan Tata believed that wealth was a trust held for society. Through the Tata Trusts — one of the oldest and largest philanthropic foundations in Asia — he directed billions toward transforming the lives of ordinary Indians.</p>
+    <div class="philan-grid">
+      <div class="philan-card">
+        <div class="philan-icon">🎓</div>
+        <div class="philan-title">Education Initiatives</div>
+        <div class="philan-text">The Tata Trusts have supported Cornell University, Harvard, and IITs across India. Closer to home, Tata-funded institutions like TISS and NID have shaped India's academic landscape. Scholarships have given countless first-generation students access to world-class education.</div>
+      </div>
+      <div class="philan-card">
+        <div class="philan-icon">🏥</div>
+        <div class="philan-title">Healthcare Contributions</div>
+        <div class="philan-text">Tata Memorial Hospital in Mumbai — one of the world's largest cancer hospitals — stands as a testament to the Tata family's commitment to accessible healthcare. The Trusts have also funded rural health initiatives, mental health awareness, and pandemic response programmes.</div>
+      </div>
+      <div class="philan-card">
+        <div class="philan-icon">🌾</div>
+        <div class="philan-title">Rural &amp; Social Welfare</div>
+        <div class="philan-text">From tribal welfare in Jharkhand to rural livelihoods in Maharashtra, the Tata Trusts have funded thousands of grassroots projects. Ratan Tata was personally involved in animal welfare causes, advocating for stray animals and funding shelters across India.</div>
+      </div>
+      <div class="philan-card">
+        <div class="philan-icon">🆘</div>
+        <div class="philan-title">Disaster Relief</div>
+        <div class="philan-text">During the 26/11 Mumbai terror attacks of 2008, the Taj Mahal Palace Hotel — a Tata property — sheltered hundreds of guests, prioritising their lives over the building. Ratan Tata personally met the families of victims and staff, and funded rehabilitation for years afterward.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quotes-section" id="quotes">
+  <div class="section-max">
+    <div class="section-eyebrow">In His Words</div>
+    <div class="section-title">Wisdom That<br><span class="gold-text">Transcends Time</span></div>
+    <div class="section-rule"></div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <div class="quote-text">I don't believe in taking right decisions. I take decisions and then make them right.</div>
+        <div class="quote-attr">— Ratan Tata</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">Take the stones people throw at you and use them to build a monument.</div>
+        <div class="quote-attr">— Ratan Tata</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">Business need not be a zero-sum game. It can be a positive-sum game where you grow the pie, and everyone benefits.</div>
+        <div class="quote-attr">— Ratan Tata</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">If you want to walk fast, walk alone. But if you want to walk far, walk together.</div>
+        <div class="quote-attr">— Ratan Tata</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">None can destroy iron, but its own rust can. Likewise, none can destroy a person, but his own mindset can.</div>
+        <div class="quote-attr">— Ratan Tata</div>
+      </div>
+      <div class="quote-card">
+        <div class="quote-text">Ups and downs in life are very important to keep us going, because a straight line even in an ECG means we are not alive.</div>
+        <div class="quote-attr">— Ratan Tata</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="legacy">
+  <div class="section-max">
+    <div class="section-eyebrow">The Enduring Impact</div>
+    <div class="section-title">A Legacy That<br><span class="gold-text">Lives On</span></div>
+    <div class="section-rule"></div>
+    <div class="legacy-grid">
+      <div class="legacy-card">
+        <div class="legacy-icon">🇮🇳</div>
+        <div class="legacy-title">Impact on India</div>
+        <div class="legacy-text">Ratan Tata transformed India's global image from a developing market to a world-class business power. The Tata brand — synonymous with trust and ethics — became India's most respected corporate ambassador on the world stage.</div>
+      </div>
+      <div class="legacy-card">
+        <div class="legacy-icon">💡</div>
+        <div class="legacy-title">Inspiring Entrepreneurs</div>
+        <div class="legacy-text">As one of India's most active angel investors, he backed startups like Ola, Paytm, Snapdeal, Lenskart, and Cure.fit. His mentorship gave an entire generation of Indian founders the confidence to dream bigger.</div>
+      </div>
+      <div class="legacy-card">
+        <div class="legacy-icon">⚖</div>
+        <div class="legacy-title">Values &amp; Ethics</div>
+        <div class="legacy-text">In a world that often equates success with ruthlessness, Ratan Tata proved that compassion, integrity, and long-term thinking are the most powerful business tools. His leadership principles remain a masterclass for every generation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="section-max">
+    <div class="section-eyebrow">Moments in Time</div>
+    <div class="section-title">A Life in<br><span class="gold-text">Frames</span></div>
+    <div class="section-rule"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-caption="Ratan Tata – Visionary Chairman of Tata Sons">
+        <img src="gallery1.jpg" alt="Ratan Tata" class="gallery-item-img">
+        <div class="gallery-item-inner"><span style="font-size:48px;opacity:0.15;">💼</span></div>
+        <div class="gallery-item-label">Ratan Tata – Visionary Chairman of Tata Sons</div>
+    </div>
+    <div class="gallery-item" data-caption="Unveiling the Tata Nano, 2008 – A Dream on Wheels">
+        <img src="gallery2.jpg" alt="Tata Nano" class="gallery-item-img">
+        <div class="gallery-item-inner"><span style="font-size:36px;opacity:0.15;">🚗</span></div>
+        <div class="gallery-item-label">Unveiling the Tata Nano, 2008 – A Dream on Wheels</div>
+    </div>
+    <div class="gallery-item" data-caption="Jaguar Land Rover Acquisition – A Historic Day">
+        <img src="gallery3.jpg" alt="Jaguar Land Rover" class="gallery-item-img">
+        <div class="gallery-item-inner"><span style="font-size:36px;opacity:0.15;">🤝</span></div>
+        <div class="gallery-item-label">Jaguar Land Rover Acquisition – A Historic Day</div>
+    </div>
+    <div class="gallery-item" data-caption="Receiving the Padma Vibhushan, India's Highest Civil Honour">
+        <img src="gallery4.jpg" alt="Padma Vibhushan" class="gallery-item-img">
+        <div class="gallery-item-inner"><span style="font-size:36px;opacity:0.15;">🏅</span></div>
+        <div class="gallery-item-label">Receiving the Padma Vibhushan, 2008</div>
+    </div>
+    <div class="gallery-item" data-caption="Ratan Tata with his beloved dogs – A Man of Compassion">
+        <img src="gallery5.jpg" alt="Beloved Dogs" class="gallery-item-img">
+        <div class="gallery-item-inner"><span style="font-size:36px;opacity:0.15;">🐕</span></div>
+        <div class="gallery-item-label">Ratan Tata with his beloved dogs – Compassion in Every Action</div>
+    </div>
+    <div class="gallery-item" data-caption="At Tata Steel, Jamshedpur – Where It All Began">
+        <img src="gallery6.jpg" alt="Tata Steel" class="gallery-item-img">
+        <div class="gallery-item-inner"><span style="font-size:36px;opacity:0.15;">🏗️</span></div>
+        <div class="gallery-item-label">At Tata Steel, Jamshedpur – Where It All Began</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <div class="lightbox-inner">
+    <div class="lightbox-close" id="lightboxClose">✕</div>
+    <div class="lightbox-content" id="lightboxContent">Gallery Image</div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-monogram">RT</span>
+  <div class="footer-name">Ratan Naval Tata</div>
+  <div class="footer-dates">28 December 1937 — 9 October 2024</div>
+  <div class="footer-tribute">"He never sought recognition, yet earned the love of a billion people. He never sought power, yet changed the destiny of a nation. In his passing, India did not lose a businessman — it lost a conscience."</div>
+  <div class="footer-line"></div>
+  <div class="footer-credit">A Tribute by <span>Mohsin Raza</span> &nbsp;·&nbsp; Built with reverence, crafted with care</div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY;
+  cursor.style.left=mx+'px';cursor.style.top=my+'px';
+});
+(function animRing(){
+  rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px';ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,button,.calc-btn,.gallery-item,.quote-card,.achievement-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.transform='translate(-50%,-50%) scale(1.8)';ring.style.borderColor='rgba(212,175,55,0.8)';});
+  el.addEventListener('mouseleave',()=>{ring.style.transform='translate(-50%,-50%) scale(1)';ring.style.borderColor='rgba(212,175,55,0.5)';});
+});
+
+window.addEventListener('load',()=>{
+  setTimeout(()=>{document.getElementById('loader').classList.add('out');},2400);
+});
+
+const bar=document.getElementById('scroll-progress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.width=(window.scrollY/h*100)+'%';
+},{ passive:true });
+
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>80);
+},{ passive:true });
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+    }
+  });
+},{threshold:0.15});
+document.querySelectorAll('.timeline-card,.achievement-card,.philan-card,.quote-card,.legacy-card,.gallery-item,.fade-up').forEach(el=>observer.observe(el));
+
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.counter-num').forEach(el=>counterObs.observe(el));
+function animateCounter(el){
+  const target=parseInt(el.dataset.target);
+  const suffix=el.dataset.suffix||'';
+  const duration=2000;
+  const start=performance.now();
+  function update(now){
+    const t=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-t,3);
+    el.textContent=Math.floor(ease*target)+suffix;
+    if(t<1)requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  document.querySelectorAll('[data-parallax]').forEach(el=>{
+    const speed=parseFloat(el.dataset.parallax);
+    el.style.transform=`translateY(${y*speed}px)`;
+  });
+  // Hero portrait subtle parallax
+  const portrait=document.querySelector('.hero-portrait');
+  if(portrait)portrait.style.transform=`translateY(${y*0.25}px)`;
+},{ passive:true });
+
+document.querySelectorAll('.gallery-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const caption=item.dataset.caption||'';
+    const inner=item.querySelector('.gallery-item-inner').innerHTML;
+    document.getElementById('lightboxContent').innerHTML=inner;
+    document.getElementById('lightboxCaption').textContent=caption;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow='hidden';
+  });
+});
+document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+document.getElementById('lightbox').addEventListener('click',e=>{
+  if(e.target===document.getElementById('lightbox'))closeLightbox();
+});
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+document.querySelectorAll('.achievement-card').forEach((el,i)=>{
+  el.style.transitionDelay=(i*0.1)+'s';
+});
+document.querySelectorAll('.quote-card').forEach((el,i)=>{
+  el.style.transitionDelay=(i*0.08)+'s';
+});
+document.querySelectorAll('.philan-card').forEach((el,i)=>{
+  el.style.transitionDelay=(i*0.1)+'s';
+});
+document.querySelectorAll('.legacy-card').forEach((el,i)=>{
+  el.style.transitionDelay=(i*0.12)+'s';
+});
+document.querySelectorAll('.gallery-item').forEach((el,i)=>{
+  el.style.transitionDelay=(i*0.08)+'s';
+});
+</script>
+</body>
+</html>
